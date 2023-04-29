@@ -26,6 +26,16 @@ const myMap = {
 	},
 
 	// add business markers
+    addMarkers() {
+		for (var i = 0; i < this.businesses.length; i++) {
+		this.markers = L.marker([
+			this.businesses[i].lat,
+			this.businesses[i].long,
+		])
+			.bindPopup(`<p1>${this.businesses[i].name}</p1>`)
+			.addTo(this.map)
+		}
+	},
 }
 
 // get coordinates via geolocation api
